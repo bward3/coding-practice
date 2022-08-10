@@ -2,9 +2,9 @@
 
 ## 2-sum
 
-<code>Input: (nums, target) where nums is an array of integers and target is the target sum
+<code>Input: (nums, target) where nums is an array of integers and target is the target sum </code>
 
-Output: [i,j] where i and j are the indeces of the solution relative to the nums array </code>
+<code> Output: [i,j] where i and j are the indeces of the solution relative to the nums array </code>
 
 #### Solution
 
