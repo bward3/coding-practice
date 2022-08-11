@@ -13,6 +13,7 @@ We need to check all possible combinations of two numbers to exhaust all possibi
 ## Max profit
 
 <code>Input: array prices where prices[i] is the price of a given stock on the i<sup>th</sup> day.</code>
+
 <code>Output: the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0. (Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.)</code>
 
 ### Solution
