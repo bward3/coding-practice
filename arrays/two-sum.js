@@ -13,12 +13,18 @@ var twoSum = function (nums, target) {
       }
     }
   }
-  return -1;
+  return [];
 };
 
-console.log(twoSum([2, 7, 11, 15], 9));
-console.log(twoSum([30, 6, 13, 11], 19));
-console.log(twoSum([1, 6, 22, 14, 123, 55], 56));
-console.log(twoSum([2, 7, -1, 15], 6));
-console.log(twoSum([7, 102, 12, 41, 12, 4, 8, 76, 12], 16));
-console.log(twoSum([7, 102, 12, 41, 12, 4, 8, 76, 12], 1));
+var twoSumFast = function (nums, target) {
+  let hash = {};
+  for (i = 0; i < nums.length; i++) {
+    let dif = target - nums[i];
+    if (hash[dif.toString()] !== undefined) {
+      return [i, hash[dif.toString()]];
+    }
+    hash[nums[i].toString()] = i;
+  }
+};
+
+console.log(twoSumFast([2, 7, 11, 15], 9));
