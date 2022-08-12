@@ -1,14 +1,16 @@
-# Blind 75 Practice
+# Leetcode Blind 75 Practice
 
 ## 2-sum
 
 <code>Input: (nums, target) where nums is an array of integers and target is the target sum </code>
 
-<code>Output: [i,j] where i and j are the indeces of the solution relative to the nums array </code>
+<code>Output: [i,j] where i and j are the indeces of the solution relative to the nums array</code>
 
 ### Solution
 
-We need to check all possible combinations of two numbers to exhaust all possibilities, so I chose a double pointer approach. The outer loop keeps track of the first index `i`, and the inner loop keeps track of the second index, `j`. We don't need to check numbers we've already looked at, so the inner loop index `j` will begin at `i+1`, where `i` simply starts at 0 and loops through the entire input array. If we find `i` and `j` where `nums[i]+nums[j] = target` we return `[i,j]`. If both loops finish without finding a solution, return empty array. This algorithm is O(n<sup>2</sup>)
+We need to check all possible combinations of two numbers to exhaust all possibilities, so I chose a double pointer approach. The outer loop keeps track of the first index `i`, and the inner loop keeps track of the second index, `j`. We don't need to check combinations we've already looked at, so the inner loop index `j` will begin at `i+1`, where `i` simply starts at 0 and loops through the entire input array. If we find `i` and `j` where `nums[i]+nums[j] = target` we return `[i,j]`. If both loops finish without finding a solution, return empty array. This algorithm is O(n<sup>2</sup>).
+
+With a little sleep and a brush-up on hash tables, I came up with another solution that only needs O(n) time to find a solution. This means we will only use one loop through the nums array, and use the hash table's constant lookup time to find the correct solution efficiently. Inside our loop, we will first calculate `dif`, the difference between our input `target` value and the value of `nums[i]`. On each iteration we push a `nums` value into the hash where the key is `nums[i]` and the value is `i`. This way, when we calculate the `dif` in a subsequent iteration, and the hashtable lookup finds a value that is already defined, we know there is a solution, and can return `[i, hash[dif]]`. If we finish the loop without a return, there is no solution to be found.
 
 ## Max profit
 
